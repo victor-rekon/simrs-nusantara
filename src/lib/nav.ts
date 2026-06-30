@@ -35,6 +35,12 @@ export const NAV: NavGroup[] = [
     ],
   },
   {
+    title: "Monitoring Real-time",
+    items: [
+      { label: "Monitoring IoT", href: "/monitoring-iot", icon: "Radio", badge: "Live" },
+    ],
+  },
+  {
     title: "Keuangan",
     items: [
       { label: "Billing & Kasir", href: "/billing", icon: "Receipt" },

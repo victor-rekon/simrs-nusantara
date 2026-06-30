@@ -1,6 +1,8 @@
-import { Card, CardHead, PageHeader, StatCard, Btn } from "@/components/ui";
+import { Card, CardHead, PageHeader, StatCard, Btn, SectionLabel } from "@/components/ui";
 import { Icon } from "@/components/icon";
 import { bangsal, type BedStatus } from "@/lib/data";
+import { VitalCard } from "@/components/iot";
+import { icuVitals } from "@/lib/iot";
 
 const bedTone: Record<BedStatus, string> = {
   Terisi: "bg-primary-600 text-white border-primary-700",
@@ -69,6 +71,13 @@ export default function Bed() {
             </Card>
           );
         })}
+      </div>
+
+      <div className="mt-8">
+        <SectionLabel>Monitor Vital ICU — Live</SectionLabel>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {icuVitals.map((d) => <VitalCard key={d.bed} d={d} />)}
+        </div>
       </div>
     </>
   );

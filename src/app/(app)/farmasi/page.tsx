@@ -1,8 +1,11 @@
-import { Card, CardHead, PageHeader, Btn, Table, Td, StatusPill, StatCard, Bar } from "@/components/ui";
+import { Card, CardHead, PageHeader, Btn, Table, Td, StatusPill, StatCard, Bar, SectionLabel } from "@/components/ui";
 import { Icon } from "@/components/icon";
 import { resep, stokObat } from "@/lib/data";
+import { ColdChainCard } from "@/components/iot";
+import { coldChain } from "@/lib/iot";
 
 export default function Farmasi() {
+  const fridges = coldChain.filter((d) => d.lokasi === "Farmasi");
   return (
     <>
       <PageHeader
@@ -54,6 +57,13 @@ export default function Farmasi() {
             ))}
           </div>
         </Card>
+      </div>
+
+      <div className="mt-8">
+        <SectionLabel>Cold Chain Vaksin & Obat Khusus — Live</SectionLabel>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {fridges.map((d) => <ColdChainCard key={d.id} d={d} />)}
+        </div>
       </div>
     </>
   );
