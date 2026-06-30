@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --shell: 264px; }
+
+* { -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body {
+  @apply bg-ink-100 text-ink-800 antialiased;
+  font-feature-settings: "ss01", "cv01";
+}
+::selection { @apply bg-primary-200 text-primary-900; }
+
+/* tabular numerals for all data surfaces */
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* thin scrollbar */
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { @apply bg-ink-300 rounded-full; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* focus ring */
+.focusable:focus-visible { @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-white; }
