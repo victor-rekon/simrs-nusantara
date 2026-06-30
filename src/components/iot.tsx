@@ -70,7 +70,7 @@ export function VitalCard({ d }: { d: typeof import("@/lib/iot").icuVitals[numbe
   const spo2Tone = spo2 < 94 ? "text-crit" : "text-ink-900";
 
   return (
-    <div className="rounded-2xl border border-ink-200 bg-ink-950 p-4 text-primary-50 shadow-card">
+    <div className="rounded-2xl border border-primary-800 bg-primary-950 p-4 text-primary-50 shadow-card">
       <div className="flex items-center justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-wide text-primary-300">{d.bed}</p>
