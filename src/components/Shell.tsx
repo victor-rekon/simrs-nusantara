@@ -69,10 +69,14 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8">{children}</main>
+        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1600px]">{children}</div>
+        </main>
 
         <footer className="border-t border-ink-200 px-6 py-4 text-center text-xs text-ink-400">
-          SIMRS Nusantara · Prototype demo · Data simulasi — bukan data pasien sebenarnya
+          <div className="mx-auto max-w-[1600px]">
+            SIMRS Nusantara · Prototype demo · Data simulasi — bukan data pasien sebenarnya
+          </div>
         </footer>
       </div>
     </div>
